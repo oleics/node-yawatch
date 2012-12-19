@@ -1,0 +1,17 @@
+{
+  "name": "yawatch",
+  "description": "Yet another file tree watcher/monitor.",
+  "version": "0.1.0",
+  "author": "Oliver Leics <oliver.leics@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oleics/node-yawatch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oleics/node-yawatch/issues"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "./lib/monitor"
+}
