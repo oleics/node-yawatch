@@ -16,14 +16,17 @@ monitor.stat([
   if(err) throw err;
   
   monitor
-    .on('create', function(pathname, statObj) {
+    .on('create', function(pathname, statObject) {
       // Handle new file or folder
     })
-    .on('change', function(pathname, statObj, previousStatObj) {
+    .on('change', function(pathname, statObject, previousStatObject) {
       // Handle changed file or folder
     })
-    .on('remove', function(pathname, statObj) {
+    .on('remove', function(pathname, statObject) {
       // Handle removed file or folder
+    })
+    .on('/tmp/test.txt', function(event, statObj, previousStatObject) {
+      // Handle event for a specific file or folder
     })
   ;
 });
