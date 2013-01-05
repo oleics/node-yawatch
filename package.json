@@ -13,8 +13,14 @@
   "engines": {
     "node": "*"
   },
+  "bin": {
+    "yawatch": "bin/cli.js"
+  },
   "main": "./lib/monitor",
-  "dependencies": {},
+  "dependencies": {
+    "optimist": "~0.3.5",
+    "shell-quote": "~0.0.1"
+  },
   "devDependencies": {},
   "optionalDependencies": {}
 }
