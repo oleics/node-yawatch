@@ -149,6 +149,7 @@ function execProcess(cmd, cb) {
     process.stdout.write(stdout);
     process.stderr.write(stderr);
     if(err) return cb(err);
+    cb();
   });
 }
 
