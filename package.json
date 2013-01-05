@@ -1,7 +1,7 @@
 {
   "name": "yawatch",
   "description": "Yet another file tree watcher/monitor.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Oliver Leics <oliver.leics@gmail.com>",
   "repository": {
     "type": "git",
