@@ -25,8 +25,12 @@ monitor.stat([
     .on('remove', function(pathname, statObject) {
       // Handle removed file or folder
     })
-    .on('/tmp/test.txt', function(event, statObj, previousStatObject) {
+    .on('/tmp/test.txt', function(event, statObject, previousStatObject) {
       // Handle event for a specific file or folder
+    })
+    .on('*', function(event, pathname, statObject, previousStatObject) {
+      // Handle any event for any file or folder
+      // previousStatObject might be undefined
     })
   ;
 });
