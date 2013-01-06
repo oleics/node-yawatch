@@ -3,33 +3,6 @@ yawatch
 
 Yet another file tree watcher/monitor that just works.
 
-Commandline
------------
-
-### Install
-
-```sh
-$ npm install yawatch -g
-```
-
-### Usage
-
-```sh
-$ yawatch --help
-Usage: yawatch [files or folders ...]
-
-Options:
-  --help          Prints this help.                                   [boolean]
-  --exec          Use exec instead of spawn to run the command.       [boolean]
-  --on-any        Command to execute on any event.                     [string]
-  --on-create     Command to execute when a file/folder was created.   [string]
-  --on-change     Command to execute when a file/folder did change.    [string]
-  --on-remove     Command to execute when a file/folder was removed.   [string]
-  --append-event  Append the event to the arguments of the command.   [boolean]
-  --append-path   Append the pathname to the arguments of the command.
-                                                                      [boolean]
-```
-
 API Usage Example
 -----------------
 
@@ -84,6 +57,40 @@ monitor.numStatErrors
 monitor.numReaddirErrors
 
 monitor.numWatchErrors
+
+Commandline Tool
+----------------
+
+### Install
+
+```sh
+$ npm install yawatch -g
+```
+
+### Usage
+
+```sh
+$ yawatch --help
+Usage: yawatch [files or folders ...]
+
+Options:
+  --help          Prints this help.                                   [boolean]
+  --exec          Use exec instead of spawn to run the command.       [boolean]
+  --on-any        Command to execute on any event.                     [string]
+  --on-create     Command to execute when a file/folder was created.   [string]
+  --on-change     Command to execute when a file/folder did change.    [string]
+  --on-remove     Command to execute when a file/folder was removed.   [string]
+  --append-event  Append the event to the arguments of the command.   [boolean]
+  --append-path   Append the pathname to the arguments of the command.
+                                                                      [boolean]
+```
+
+Tests
+-----
+
+```sh
+$ npm test
+```
 
 MIT License
 -----------
