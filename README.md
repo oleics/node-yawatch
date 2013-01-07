@@ -71,7 +71,7 @@ $ npm install yawatch -g
 
 ```sh
 $ yawatch --help
-Usage: yawatch [files or folders ...]
+Usage: yawatch [files and/or folders ...]
 
 Options:
   --help          Prints this help.                                   [boolean]

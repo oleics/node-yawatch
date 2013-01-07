@@ -2,7 +2,7 @@
 
 var optimist = require('optimist'),
     argv = optimist.usage(
-      'Usage: yawatch [files or folders ...]',
+      'Usage: yawatch [files and/or folders ...]',
       {
         'help': {
           description: 'Prints this help.',
