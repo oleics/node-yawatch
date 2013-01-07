@@ -35,7 +35,7 @@ var optimist = require('optimist'),
         'append-path': {
           description: 'Append the pathname to the arguments of the command.',
           boolean: true
-        },
+        }
       }
     ).argv,
     monitor = require('yawatch').createMonitor(),
@@ -105,17 +105,23 @@ function onAnyEvent(event, pathname, statObject, previousStatObject) {
   
   Object.keys(commands).forEach(function(key) {
     if(commands[key]) {
-      execCommand(commands[key], event, pathname, onCommandEnd);
+      if(key === '*' || key === event) {
+        execCommand(commands[key], event, pathname, function(err) {
+          if(err) {
+            console.error(err.message);
+            console.error('  Command: ' + shellQuote(commands[key]) + '');
+            console.error('  Event: ' + event + ' (' + key + ')');
+            console.error('  Path: ' + pathname);
+          }
+        });
+      }
+      
       found = true;
     }
   });
   
   if(!found) {
     console.log(event, pathname);
-  }
-  
-  function onCommandEnd(err) {
-    if(err) throw err;
   }
 }
 
@@ -166,7 +172,7 @@ function spawProcess(cmd, cb) {
   
   child.on('exit', function(code, sig) {
     if(code) {
-      return cb(new Error('child process exited with code ' + code + ', sig ' + sig));
+      return cb(new Error('Child process exited with code ' + code + ', sig ' + sig + '.'));
     }
     
     cb();
